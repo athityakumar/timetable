@@ -12,7 +12,7 @@ subjects.push( { "Code" => "ME39013" , "Subject" => "Mech of solids - Lab" , "Pl
 subjects.push( { "Code" => "ME39007" , "Subject" => "CFW - Lab" , "Place" => "Dept" , "Slot" => { "Friday" => "02-05" }} )
 
 puts ""
-print "Enter day : "
+print "Enter day (Default day is today = #{Date.today.strftime("%A")}) : "
 day , found , match = gets.chomp.to_s , 0 , []
 day = day.length == 0 ? Date.today.strftime("%A") : day
 
