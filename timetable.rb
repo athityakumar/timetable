@@ -60,7 +60,15 @@ def get_day args
     if args == "All"
       day = "Monday,Tuesday,Wednesday,Thursday,Friday"  
     else
-      day = args
+      if args == "Today"
+        day = Date.today.strftime("%A")
+      elsif args == "Yesterday"
+        day = (Date.today-1).strftime("%A") 
+      elsif args == "Tomorrow"
+        day = (Date.today+1).strftime("%A")
+      else
+        day = args
+      end  
     end
   end
   day = day.length == 0 ? Date.today.strftime("%A") : day
