@@ -4,10 +4,10 @@ This is a simple script to lookup your timetable from the terminal. The `subject
 
 USING THE TOOL 
 --------------
-(0) Type the following commands on a terminal -
-<br> (0.1) `git@github.com:athityakumar/timetable.git`
-<br> (0.2) `cd timetable` 
-<br> (0.3) `ruby timetable.rb` or `ruby timetable.rb All` or `ruby timetable.rb Monday`
+<ol> Type the following commands on a terminal -
+<br> <li> `git@github.com:athityakumar/timetable.git`</li>
+<br> <li> `cd timetable` </li>
+<br> <li> `ruby timetable.rb` or `ruby timetable.rb All` or `ruby timetable.rb Monday`</li></ol>
 <br><br>Even better way of usage would be, to include in `bin/` and `etc/bash_completion.d` folders.
 <br> (1) For `bin/` :
 <br> (1.1) `cd ~/../../bin/`
