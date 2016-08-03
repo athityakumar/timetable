@@ -15,9 +15,9 @@ USING THE TOOL (ADVANCED)
   - [x]  `cd timetable` 
   - [x]  `ruby timetable.rb` or `ruby timetable.rb All` or `ruby timetable.rb Monday`
 - [x] For `bin/` :
-  - [x] (1.1) `cd ~/../../bin/`
-  - [x] (1.2) `sudo vim timetable`
-  - [x] (1.3) Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) - 
+  - [x] `cd ~/../../bin/`
+  - [x] `sudo vim timetable`
+  - [x] Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) - 
   <pre>cd ~/timetable;
   <br>if [ $# = 0 ];
   <br>then
@@ -27,9 +27,9 @@ USING THE TOOL (ADVANCED)
   <br>fi
   </pre>
 - [x] For `etc/bash_completion.d` :
-  - [x] (2.1) `cd ~/../../etc/bash_completion.d`
-  - [x] (2.2) `sudo vim timetable`
-  - [x] (2.3) Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) -
+  - [x] `cd ~/../../etc/bash_completion.d`
+  - [x] `sudo vim timetable`
+  - [x] Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) -
   <pre>_timetable()
   <br>{
   <br>    local cur prev opts
