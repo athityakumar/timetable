@@ -14,28 +14,28 @@ USING THE TOOL
     - [ ] (1.2) `sudo vim timetable`
     - [ ] (1.3) Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) - 
     <pre>cd ~/timetable;
-    - [ ]if [ $# = 0 ];
-    - [ ]then
-    - [ ]    ruby timetable.rb;
-    - [ ]else
-    - [ ]   ruby timetable.rb $1;
-    - [ ]fi
+    <br>if [ $# = 0 ];
+    <br>then
+    <br>    ruby timetable.rb;
+    <br>else
+    <br>   ruby timetable.rb $1;
+    <br>fi
     </pre>
   - [ ] For `etc/bash_completion.d` :
     - [ ] (2.1) `cd ~/../../etc/bash_completion.d`
     - [ ] (2.2) `sudo vim timetable`
     - [ ] (2.3) Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) -
     <pre>_timetable()
-    - [ ]{
-    - [ ]    local cur prev opts
-    - [ ]    COMPREPLY=()
-    - [ ]    cur="${COMP_WORDS[COMP_CWORD]}"
-    - [ ]    prev="${COMP_WORDS[COMP_CWORD-1]}"
-    - [ ]    opts="Monday Tuesday Wednesday Thursday Friday All"
-    - [ ]    COMPREPLY=( $(compgen -W "$opts" -- $cur) )
-    - [ ]    return 0
-    - [ ]}
-    - [ ]complete -F _timetable timetable
+    <br>{
+    <br>    local cur prev opts
+    <br>    COMPREPLY=()
+    <br>    cur="${COMP_WORDS[COMP_CWORD]}"
+    <br>    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    <br>    opts="Monday Tuesday Wednesday Thursday Friday All"
+    <br>    COMPREPLY=( $(compgen -W "$opts" -- $cur) )
+    <br>    return 0
+    <br>}
+    <br>complete -F _timetable timetable
     </pre>
 - [ ] Now, open a new terminal and type `timet` and press `Tab`. Auto-completes, eh? Even better, try pressing `Tab` after timetable to choose into a day easily.
 
