@@ -2,42 +2,47 @@ DESCRIPTION
 -----------
 This is a simple script to lookup your timetable from the terminal. The `subjects []` in `timetable.rb` must be changed accordingly.
 
-USING THE TOOL 
---------------
-- [ ] Type the following commands on a terminal -
-  - [ ] `git@github.com:athityakumar/timetable.git`
-  - [ ]  `cd timetable` 
-  - [ ]  `ruby timetable.rb` or `ruby timetable.rb All` or `ruby timetable.rb Monday`
-- [ ] Even better way of usage would be, to include in `bin/` and `etc/bash_completion.d` folders.
-  - [ ] For `bin/` :
-    - [ ] (1.1) `cd ~/../../bin/`
-    - [ ] (1.2) `sudo vim timetable`
-    - [ ] (1.3) Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) - 
-    <pre>cd ~/timetable;
-    <br>if [ $# = 0 ];
-    <br>then
-    <br>    ruby timetable.rb;
-    <br>else
-    <br>   ruby timetable.rb $1;
-    <br>fi
-    </pre>
-  - [ ] For `etc/bash_completion.d` :
-    - [ ] (2.1) `cd ~/../../etc/bash_completion.d`
-    - [ ] (2.2) `sudo vim timetable`
-    - [ ] (2.3) Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) -
-    <pre>_timetable()
-    <br>{
-    <br>    local cur prev opts
-    <br>    COMPREPLY=()
-    <br>    cur="${COMP_WORDS[COMP_CWORD]}"
-    <br>    prev="${COMP_WORDS[COMP_CWORD-1]}"
-    <br>    opts="Monday Tuesday Wednesday Thursday Friday All"
-    <br>    COMPREPLY=( $(compgen -W "$opts" -- $cur) )
-    <br>    return 0
-    <br>}
-    <br>complete -F _timetable timetable
-    </pre>
-- [ ] Now, open a new terminal and type `timet` and press `Tab`. Auto-completes, eh? Even better, try pressing `Tab` after timetable to choose into a day easily.
+USING THE TOOL (STARTERS)
+-------------------------
+- [x] `git@github.com:athityakumar/timetable.git`
+- [x]  `cd timetable` 
+- [x]  `ruby timetable.rb` or `ruby timetable.rb All` or `ruby timetable.rb Monday`
+
+USING THE TOOL (ADVANCED)
+-------------------------
+- [x] Type the following commands on a terminal -
+  - [x] `git@github.com:athityakumar/timetable.git`
+  - [x]  `cd timetable` 
+  - [x]  `ruby timetable.rb` or `ruby timetable.rb All` or `ruby timetable.rb Monday`
+- [x] For `bin/` :
+  - [x] (1.1) `cd ~/../../bin/`
+  - [x] (1.2) `sudo vim timetable`
+  - [x] (1.3) Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) - 
+  <pre>cd ~/timetable;
+  <br>if [ $# = 0 ];
+  <br>then
+  <br>    ruby timetable.rb;
+  <br>else
+  <br>   ruby timetable.rb $1;
+  <br>fi
+  </pre>
+- [x] For `etc/bash_completion.d` :
+  - [x] (2.1) `cd ~/../../etc/bash_completion.d`
+  - [x] (2.2) `sudo vim timetable`
+  - [x] (2.3) Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) -
+  <pre>_timetable()
+  <br>{
+  <br>    local cur prev opts
+  <br>    COMPREPLY=()
+  <br>    cur="${COMP_WORDS[COMP_CWORD]}"
+  <br>    prev="${COMP_WORDS[COMP_CWORD-1]}"
+  <br>    opts="Monday Tuesday Wednesday Thursday Friday All"
+  <br>    COMPREPLY=( $(compgen -W "$opts" -- $cur) )
+  <br>    return 0
+  <br>}
+  <br>complete -F _timetable timetable
+  </pre>
+- [x] Now, open a new terminal and type `timet` and press `Tab`. Auto-completes, eh? Even better, try pressing `Tab` after timetable to choose into a day easily.
 
 CONTRIBUTION
 ------------
