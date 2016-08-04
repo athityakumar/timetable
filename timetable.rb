@@ -12,7 +12,7 @@ def init_subjects
   subjects.push( { "Code" => "MA21007" , "Subject" => "Design & Analysis of Algo" , "Place" => "NR322" , "Slot" => { "Monday" => "03-05" , "Tuesday" => "02-04" }} )
   subjects.push( { "Code" => "ME31013" , "Subject" => "Mech of solids" , "Place" => "NR322" , "Slot" => { "Wednesday" => "12-01" , "Thursday" => "11-12" , "Friday" => "09-11" }} )
   subjects.push( { "Code" => "ME39013" , "Subject" => "Mech of solids - Lab" , "Place" => "Dept" , "Slot" => { "Thursday" => "02-05" }} )
-  subjects.push( { "Code" => "ME39007" , "Subject" => "CFW - Lab" , "Place" => "Dept" , "Slot" => { "Friday" => "02-05" }} )
+  subjects.push( { "Code" => "ME39007" , "Subject" => "CFW Lab" , "Place" => "Dept" , "Slot" => { "Friday" => "02-05" }} )
 
   return subjects
 
@@ -40,10 +40,10 @@ def print_timetable subjects , day
     time = subject["Slot"][day].split("-")[0].to_i
     if time > 12
       real_time = "0"+subject["Slot"][day].gsub(time.to_s,(time-12).to_s) 
-      to_print.push([real_time,subject["Subject"],subject["Place"]])
+      to_print.push([real_time,subject["Subject"]+" (" + subject["Code"]+" ) ",subject["Place"]])
       #puts "#{real_time} - #{subject["Subject"]} (#{subject["Code"]}) - #{subject["Place"]} "
     else
-      to_print.push([subject["Slot"][day],subject["Subject"],subject["Place"]])
+      to_print.push([subject["Slot"][day],subject["Subject"]+" ("+subject["Code"]+" ) ",subject["Place"]])
       #puts "#{subject["Slot"][day]} - #{subject["Subject"]} (#{subject["Code"]}) - #{subject["Place"]} "
     end
   end
