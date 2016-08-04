@@ -16,7 +16,7 @@ USING THE TOOL (ADVANCED)
   - [x]  `ruby timetable.rb` or `ruby timetable.rb All` or `ruby timetable.rb Monday`
 - [x] For `bin/` :
   - [x] `cd ~/../../bin/`
-  - [x] `sudo vim timetable`
+  - [x] `sudo vim Timetable`
   - [x] Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) - 
   <pre>cd ~/timetable;
   <br>if [ $# = 0 ];
@@ -28,21 +28,21 @@ USING THE TOOL (ADVANCED)
   </pre>
 - [x] For `etc/bash_completion.d` :
   - [x] `cd ~/../../etc/bash_completion.d`
-  - [x] `sudo vim timetable`
+  - [x] `sudo vim Timetable`
   - [x] Copy paste this into vim editor (`Ctrl + Shift + V`) and save it (`Esc + : + q`) -
-  <pre>_timetable()
-  <br>{
-  <br>    local cur prev opts
-  <br>    COMPREPLY=()
-  <br>    cur="${COMP_WORDS[COMP_CWORD]}"
-  <br>    prev="${COMP_WORDS[COMP_CWORD-1]}"
-  <br>    opts="Monday Tuesday Wednesday Thursday Friday All"
-  <br>    COMPREPLY=( $(compgen -W "$opts" -- $cur) )
-  <br>    return 0
-  <br>}
-  <br>complete -F _timetable timetable
-  </pre>
-- [x] Now, open a new terminal and type `timet` and press `Tab`. Auto-completes, eh? Even better, try pressing `Tab` after timetable to choose into a day easily.
+<pre>_Timetable()
+<br>{
+<br>    local cur prev opts
+<br>    COMPREPLY=()
+<br>    cur="${COMP_WORDS[COMP_CWORD]}"
+<br>    prev="${COMP_WORDS[COMP_CWORD-1]}"
+<br>    opts="Monday Tuesday Wednesday Thursday Friday All Yesterday Today Tomorrow"
+<br>    COMPREPLY=( $(compgen -W "$opts" -- $cur) )
+<br>    return 0
+<br>}
+<br>complete -F _Timetable Timetable
+</pre>
+- [x] Now, open a new terminal and type `Timet` and press `Tab`. Auto-completes, eh? Even better, try pressing `Tab` after timetable to choose into a day easily.
 
 CONTRIBUTION
 ------------
