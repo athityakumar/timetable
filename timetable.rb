@@ -1,4 +1,5 @@
 require 'date'
+require 'terminal-table'
 
 def init_subjects
 
@@ -19,7 +20,7 @@ end
 
 def print_timetable subjects , day
 
-  found , match =  0 , []
+  found , match , to_print =  0 , [] , [] 
   subjects.each do |subject|
     if subject["Slot"].keys.include? day
       if found == 0
@@ -39,13 +40,19 @@ def print_timetable subjects , day
     time = subject["Slot"][day].split("-")[0].to_i
     if time > 12
       real_time = "0"+subject["Slot"][day].gsub(time.to_s,(time-12).to_s) 
-      puts "#{real_time} - #{subject["Subject"]} (#{subject["Code"]}) - #{subject["Place"]} "
+      to_print.push([real_time,subject["Subject"],subject["Place"]])
+      #puts "#{real_time} - #{subject["Subject"]} (#{subject["Code"]}) - #{subject["Place"]} "
     else
-      puts "#{subject["Slot"][day]} - #{subject["Subject"]} (#{subject["Code"]}) - #{subject["Place"]} "
+      to_print.push([subject["Slot"][day],subject["Subject"],subject["Place"]])
+      #puts "#{subject["Slot"][day]} - #{subject["Subject"]} (#{subject["Code"]}) - #{subject["Place"]} "
     end
   end
 
-  puts "\nFound #{found} classes for #{day}"
+  #puts "\nFound #{found} classes for #{day}"
+  #puts ""
+
+  table = Terminal::Table.new :title => "#{day.upcase} - TIMETABLE - Found #{found} classes", :headings => ['TIMING', 'COURSE', 'PLACE'], :rows => to_print, :style => { :alignment => :center, :border_x => "=", :border_i => "="}
+  puts table
   puts ""
 
 end
